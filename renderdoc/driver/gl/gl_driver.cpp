@@ -3955,6 +3955,20 @@ bool WrappedOpenGL::ProcessChunk(ReadSerialiser &ser, GLChunk chunk)
     case GLChunk::glReleaseKeyedMutexWin32EXT:
       return Serialise_glReleaseKeyedMutexWin32EXT(ser, 0, 0);
 
+    // Ignore those.
+    case GLChunk::glBeginPerfQueryINTEL:
+    case GLChunk::glCreatePerfQueryINTEL:
+    case GLChunk::glDeletePerfQueryINTEL:
+    case GLChunk::glEndPerfQueryINTEL:
+    case GLChunk::glGetFirstPerfQueryIdINTEL:
+    case GLChunk::glGetNextPerfQueryIdINTEL:
+    case GLChunk::glGetPerfCounterInfoINTEL:
+    case GLChunk::glGetPerfQueryDataINTEL:
+    case GLChunk::glGetPerfQueryIdByNameINTEL:
+    case GLChunk::glGetPerfQueryInfoINTEL:
+      ser.SkipCurrentChunk();
+      return true;
+
     // these functions are not currently serialised - they do nothing on replay and are not
     // serialised for information (it would be harmless and perhaps useful for the user to see
     // where and how they're called).

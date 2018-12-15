@@ -2063,6 +2063,16 @@ enum class GLChunk : uint32_t
   glImportSemaphoreWin32NameEXT,
   glAcquireKeyedMutexWin32EXT,
   glReleaseKeyedMutexWin32EXT,
+  glBeginPerfQueryINTEL,
+  glCreatePerfQueryINTEL,
+  glDeletePerfQueryINTEL,
+  glEndPerfQueryINTEL,
+  glGetFirstPerfQueryIdINTEL,
+  glGetNextPerfQueryIdINTEL,
+  glGetPerfCounterInfoINTEL,
+  glGetPerfQueryDataINTEL,
+  glGetPerfQueryIdByNameINTEL,
+  glGetPerfQueryInfoINTEL,
 
   ContextConfiguration,
 

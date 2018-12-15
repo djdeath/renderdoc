@@ -51,7 +51,7 @@ struct GLDispatchTable
   // Any Core functions that are semantically identical to extension variants are listed as
   // 'aliases' such that if the 'alias' is requested via *GetProcAddress, the core function
   // will be returned and used.
-  
+
   PFNGLBINDTEXTUREPROC glBindTexture;
   PFNGLBLENDFUNCPROC glBlendFunc;
   PFNGLCLEARPROC glClear;
@@ -942,6 +942,8 @@ struct GLDispatchTable
   PFNGLGETQUERYBUFFEROBJECTIVPROC glGetQueryBufferObjectiv;
   PFNGLGETQUERYBUFFEROBJECTUI64VPROC glGetQueryBufferObjectui64v;
   PFNGLGETQUERYBUFFEROBJECTUIVPROC glGetQueryBufferObjectuiv;
+
+  // INTEL_performance_query
   PFNGLBEGINPERFQUERYINTELPROC glBeginPerfQueryINTEL;
   PFNGLCREATEPERFQUERYINTELPROC glCreatePerfQueryINTEL;
   PFNGLDELETEPERFQUERYINTELPROC glDeletePerfQueryINTEL;
